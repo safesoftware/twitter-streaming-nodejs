@@ -8,10 +8,10 @@ var util = require('util'),
     fs = require('fs');
 
 var twit = new twitter({
-    consumer_key: 'G2ecWjc6XMbTNLZYfOkQw',
-    consumer_secret: 'y97ZnW2dLOWlI8Hma0LnaSd3Pk1XSRCzb6ZaEdyhYY',
-    access_token_key: '62931183-tXB8gKDUT5Jylkcoy3mKxSWNF0H4y6i1jeDwTpBTa',
-    access_token_secret: 'jPf61qFAtcskhwgIoMU3vddpAZGuyZmRkIMzEXeu5qIzr'
+    consumer_key: '<ENTER>',
+    consumer_secret: '<ENTER>',
+    access_token_key: '<ENTER>',
+    access_token_secret: '<ENTER>'
 });
 
 //Use the default port (for beanstalk) or default to 8081 locally
