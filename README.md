@@ -3,7 +3,7 @@ twitter-streaming-nodejs
 
 Shows how to stream real time twitter data to Google Maps using NodeJS.
 
-A walkthrough of the code is available here. Below deplying the application on AWS Elastic Beanstalk is discussed.
+A walkthrough of the code is available <a href="http://blog.safe.com/2014/03/twitter-stream-api-map/" target="_blank">here</a>. Below deplying the application on AWS Elastic Beanstalk is discussed.
 
 
 <h2>Step 1: Create AWS Account</h2>
