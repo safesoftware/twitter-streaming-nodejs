@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<meta charset="UTF-8">
+<head>
+	<!-- Safe Software, 2013 -->
+	<!-- http://www.safe.com -->
+
+	<title>Twitter Streaming Using Node</title>
+	<script src="../socket.io/socket.io.js"></script>
+	<!-- JQuery -->
+	<script src="/libs/jquery-1.10.1.js"></script>
+
+	<!-- Bootstrap -->
+	<!--http://getbootstrap.com/2.3.2/-->
+	<script src="/libs/bootstrap/js/bootstrap.js"></script>
+	<link href="/libs/bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/libs/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  
+	<!-- Google Maps -->
+	<link href="https://google-developers.appspot.com/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=visualization"></script>
+
+	<!-- Generic -->
+	<link rel="stylesheet" href="css/index.css">
+	<!-- Generic server specific functions -->
+	<script src="/js/FMEServer.js" type="text/javascript"></script>
+
+	<!-- Spatial Dashboard JavaScript -->
+	<script src="/js/twitterStream.js" type="text/javascript"></script>
+
+</head>
+
+<body class="iframe" onload="initialize()">
+		<div id="map_canvas"></div>
+</body>
+</html>
