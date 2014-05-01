@@ -28,8 +28,7 @@ io.sockets.on('connection', function (socket) {
 
     if(stream === null) {
       //Connect to twitter stream passing in filter for entire world.
-      twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(s) {
-          stream = s;
+      twit.stream('statuses/filter', {'locations':'-180,-90,180,90'}, function(stream) {
           stream.on('data', function(data) {
               // Does the JSON result have coordinates
               if (data.coordinates){
@@ -41,6 +40,27 @@ io.sockets.on('connection', function (socket) {
 
                   //Send out to web sockets channel.
                   socket.emit('twitter-stream', outputPoint);
+                }
+                else if(data.place){
+                  if(data.place.bounding_box === 'Polygon'){
+                    // Calculate the center of the bounding box for the tweet
+                    var coord, _i, _len;
+                    var centerLat = 0;
+                    var centerLng = 0;
+
+                    for (_i = 0, _len = coords.length; _i < _len; _i++) {
+                      coord = coords[_i];
+                      centerLat += coord[0];
+                      centerLng += coord[1];
+                    }
+                    centerLat = centerLat / coords.length;
+                    centerLng = centerLng / coords.length;
+
+                    // Build json object and broadcast it
+                    var outputPoint = {"lat": centerLat,"lng": centerLng};
+                    socket.broadcast.emit("twitter-stream", outputPoint);
+
+                  }
                 }
               }
           });
