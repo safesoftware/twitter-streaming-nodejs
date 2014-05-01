@@ -63,6 +63,17 @@ io.sockets.on('connection', function (socket) {
                   }
                 }
               }
+              stream.on('limit', function(limitMessage) {
+                return console.log(limitMessage);
+              });
+
+              stream.on('warning', function(warning) {
+                return console.log(warning);
+              });
+
+              stream.on('disconnect', function(disconnectMessage) {
+                return console.log(disconnectMessage);
+              });
           });
       });
     }
